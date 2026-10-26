@@ -4,10 +4,10 @@ from . import views
 app_name = 'tweet'
 
 urlpatterns = [
-    path('', views.index, name='index'),
-    path('list/', views.tweet_list, name='list'),
-    path('create/', views.tweet_create, name='create'),
-    path('<int:tweet_id>/edit/', views.tweet_edit, name='edit'),
-    path('<int:tweet_id>/delete/', views.tweet_delete, name='delete'),
-    path('<int:tweet_id>/like/', views.tweet_like, name='like'),
+    path('index/', views.index, name='index'),
+    path('', views.tweet_list, name='tweet_list'),
+    path('create/', views.tweet_create, name='tweet_create'),
+    path('<int:tweet_id>/edit/', views.tweet_edit, name='tweet_edit'),
+    path('<int:tweet_id>/delete/', views.tweet_delete, name='tweet_delete'),
+    path('<int:tweet_id>/like/', views.tweet_like, name='tweet_like'),
 ]

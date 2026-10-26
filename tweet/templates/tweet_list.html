@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Tweet List
+{% endblock %}
+
+{% block content %}
+<h1 class="text-center mt-4">Welcome to Chai aur Django Project</h1>
+<a class="btn btn-primary m-3" href="{% url 'tweet:tweet_create' %}">Create Tweet</a>
+<div class="container row gap-3">
+{% for tweet in tweets %}
+    <section class="card" style="width: 18rem;">
+        <img src="{{ tweet.photo.url }}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h4 class="card-title">{{tweet.user.username}}</h4>
+            <p class="card-text">
+                {{ tweet.text }}
+            </p>
+            <div style="display: flex; justify-content: space-between;">
+                <a href="{% url 'tweet:tweet_edit' tweet.id %}" class="btn-solid theme-primary" style="">Edit</a>
+                <a href="{% url 'tweet:tweet_delete' tweet.id %}" class="btn-solid theme-danger">Delete</a>
+                {% comment %} <a href="{% url 'tweet:tweet_like' tweet.id %}" class="btn-solid theme-primary">Like</a> {% endcomment %}
+            </div> 
+        </div>
+    </section>
+{% endfor %}
+</div>
+{% endblock %}
