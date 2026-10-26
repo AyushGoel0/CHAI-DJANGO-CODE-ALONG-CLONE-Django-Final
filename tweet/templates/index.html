@@ -1,17 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        body {
-            background-color: #000000;
-            color: #ffffff;
-        }
-    </style>
-</head>
-<body>
-    <h1>Welcome to the Tweet App</h1>
-</body>
-</html>
+{% extends "layout.html" %}
+
+{% block title %}
+Chai aur Tweets
+{% endblock %}
+
+{% block content %}
+    <h1 class="text-center mt-4">Welcome to Chai aur Django Project</h1>
+    {% comment %} <p>This is a simple Django application that allows users to post tweets and view them in a timeline.</p>
+    <a href="{% url 'tweet:create' %}" class="btn btn-primary">Create a Tweet</a> {% endcomment %}
+{% endblock %}
