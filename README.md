@@ -53,6 +53,7 @@ python -m pip install -r requirements.txt
 Apply database migrations:
 
 ```powershell
+python manage.py makemigrations
 python manage.py migrate
 ```
 
